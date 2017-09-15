@@ -44,7 +44,7 @@ public class STDCalculator{
 
     public static void calcSTD() {
         // a concept easily worked out on paper; but can be hidden in a loop. The first step is to calculate variance,
-        // and add them all together; the std is then 
+        // and add them all together; the std is then the sqroot of the sum of the variances.
         double sqSum = 0;
         for (int index = 0; index < input.length; index++) {
             sqSum = sqSum + Math.pow((input[index] - average), 2);
