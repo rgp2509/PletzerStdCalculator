@@ -1,7 +1,21 @@
+/*
+(Statistics: compute mean and standard deviation) In business applications, you
+are often asked to compute the mean and standard deviation of data. The mean is
+simply the average of the numbers. The standard deviation is a statistic that tells
+you how tightly all the various data are clustered around the mean in a set of data.
+For example, what is the average age of the students in a class? How close are the
+ages? If all the students are the same age, the deviation is 0.
+ Write a program that prompts the user to enter ten numbers, and displays the
+mean and standard deviations of these numbers using the following formula:
+
+@Author Ryan Pletzer
+All rights reserved;
+@Csc 201
+ */
 import java.util.Scanner;
 
 public class STDCalculator{
-
+// Assigning global variables, and putting the input into an array.
     static double[] input;
     static Scanner keyboard = new Scanner(System.in);
     static double average = -100;
@@ -16,6 +30,8 @@ public class STDCalculator{
         calcSTD();
     }
     public static void calcMean() {
+        // first we calculate the mean, this is important calculating the variance ( a method
+        // that needs to be used to figure out STD)
         System.out.println("Enter " + input.length + " values/scores:");
         double sum = 0;
         for (int index = 0; index < input.length; index++) {
@@ -27,6 +43,8 @@ public class STDCalculator{
     }
 
     public static void calcSTD() {
+        // a concept easily worked out on paper; but can be hidden in a loop. The first step is to calculate variance,
+        // and add them all together; the std is then 
         double sqSum = 0;
         for (int index = 0; index < input.length; index++) {
             sqSum = sqSum + Math.pow((input[index] - average), 2);
